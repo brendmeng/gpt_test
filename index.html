@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Webpage</title>
+  </head>
+  <script>
+    function myFunction() {
+      //https://gpt-test-xb9r.vercel.app/chat fetch with prompt: "I want a black Pokemon"
+        fetch('https://gpt-test-xb9r.vercel.app/chat', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ prompt: 'I want a card' }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+            console.log('Success:', data);
+            document.getElementById('demo').innerHTML = data
+            })
+            .catch((error) => {
+            console.error('Error:', error);
+            });
+    }
+  </script>
+  <body>
+    <input type="text" id="myText" value="I want a card">
+    
+    <button onclick="myFunction()">Ask for a black Pokemon</button>
+    <p id="demo"></p>
+  </body>
+</html>

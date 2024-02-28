@@ -8,4 +8,6 @@ def render_card_in_console(card_name, card_value):
     print(f"**{card_value}**")
     for i in range(5):
         print("*" * 10)
+
+    return card_name, card_value
         

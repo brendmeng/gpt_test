@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from api.util.engine import ask_and_reply
 
 app = Flask(__name__)
 CORS(app)
 
-from api.util.engine import ask_and_reply
 
 @app.route('/', methods=['GET'])
 def index():

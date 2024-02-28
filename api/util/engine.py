@@ -68,7 +68,7 @@ def ask_and_reply(prompt):
     json_data = json.loads(output.function_call.arguments)
     card_name = json_data.get('card_suit')
     card_value = json_data.get('card_value')
-    render_card_in_console(card_name, card_value)
+    return render_card_in_console(card_name, card_value) #array of card name and value
 
 
 
